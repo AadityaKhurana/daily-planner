@@ -22,7 +22,7 @@ A simple and efficient Daily Planner application to help users organize their ta
    ```
 3. Install dependencies:
    ```sh
-   pip install "requirements.txt"
+   pip install -r requirements.txt
    ```
 4. Start the application:
    ```sh
