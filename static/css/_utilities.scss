@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Open+Sans:wght@600&display=swap");
+
+$light: #cfcfcf;
+$lighter: #e7e7e7;
+$lightest: #fafafa;
+$dark: #3f3f3f;
+$darker: #303030;
+$darkest: #161616;
+$red: #ec5628;
+$green: #2bcc46;
+$orange: #fcaa12;
+$blue: #1e54dd;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background: linear-gradient(to top right, $darkest, $dark);
+}
+
+@mixin btn($clr, $bg-clr, $fnt-sz) {
+	color: $clr;
+	background: $bg-clr;
+	font-family: "Open Sans", sans-serif;
+	font-size: $fnt-sz;
+	padding: 0.35em 0.9em;
+	border: none;
+	box-shadow: 0 2px 2px 1px rgba(black, 0.2);
+	border-radius: 0.25em;
+
+	&:hover {
+		cursor: pointer;
+		filter: brightness(1.1);
+	}
+
+	&:active {
+		transform: scale(97%);
+	}
+}
+
+.hide {
+	display: none !important;
+}
+
+.show {
+	visibility: visible !important;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/reminders.css">
+    <script src="/static/js/reminders.js"></script>
+    <title>Time-it | Reminders
+    </title>
+</head>
+
+<body>
+    <main class="container">
+        <form method="POST">
+            <div class="row">
+                <input onclick="check()" type="checkbox" id="water">
+                <div class="text">Water</div>
+                <input type="hidden" name="water" id="water_input">
+            </div>
+            <div class="row">
+                <input onclick="check()" type="checkbox" id="meditation">
+                <div class="text">Meditation</div>
+                <input type="hidden" name="meditation" id="meditation_input">
+            </div>
+            <div class="row">
+                <input onclick="check()" type="checkbox" id="exercise">
+                <div class="text">Exercise</div>
+                <input type="hidden" name="exercise" id="exercise_input">
+            </div>
+            <div class="row">
+                <input onclick="check()" type="checkbox" id="rest">
+                <div class="text">Take a Break</div>
+                <input type="hidden" name="rest" id="rest_input">
+            </div>
+            <div class="row">
+                <input onclick="check()" type="checkbox" id="entertain">
+                <div class="text">Entertain</div>
+                <input type="hidden" name="entertain" id="entertain_input">
+            </div>
+            <div class="row">
+                <input type="submit" id="save_btn" value="Save" style="width: fit-content;height: fit-content;">
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

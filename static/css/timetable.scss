@@ -1,0 +1,139 @@
+@import "_utilities";
+
+body {
+	display: grid;
+	place-items: center;
+	font-family: "Open Sans", sans-serif;
+}
+
+.timetable {
+	width: 30vw;
+	position: relative;
+
+	.row {
+		display: flex;
+		align-items: center;
+		padding-inline: 0.75em;
+		height: 7.4vh;
+		background: $lighter;
+		border: 1px solid $darkest;
+		position: relative;
+
+		&:nth-child(1) {
+			border-radius: 10px 10px 0 0;
+		}
+
+		&:nth-child(12) {
+			border-radius: 0 0 10px 10px;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&::before {
+			content: attr(data-time);
+			color: rgba($light, 0.75);
+			position: absolute;
+			left: -0.75em;
+			top: 0;
+			transform: translate(-100%, -50%);
+		}
+
+		&:nth-child(12)::after {
+			content: "09 PM";
+			color: rgba($light, 0.75);
+			position: absolute;
+			left: -0.75em;
+			bottom: 0;
+			transform: translate(-100%, 50%);
+		}
+	}
+}
+
+.caret {
+	position: absolute;
+	width: 104%;
+	height: 3px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: $blue;
+}
+
+.popup-container {
+	position: absolute;
+	inset: 0;
+	background: transparent;
+	backdrop-filter: blur(5px);
+	display: none;
+	place-items: center;
+
+	.popup {
+		color: $darkest;
+		padding: 1em;
+		background: $lighter;
+		border: 2px solid $darkest;
+		border-radius: 0.375em;
+		box-shadow: 0 0 15px 3px rgba($darkest, 0.5);
+	}
+}
+
+form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	* {
+		display: block;
+	}
+
+	label {
+		margin-bottom: 0.375em;
+	}
+
+	input {
+		padding: 4px 7px;
+		margin-bottom: 1em;
+		background: transparent;
+		outline: none;
+		border: 1px solid $darkest;
+		border-radius: 4px;
+		font-size: 1rem;
+
+		&#link {
+			color: $blue;
+			text-decoration: underline;
+			font-style: italic;
+		}
+	}
+}
+
+.buttons {
+	align-self: center;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	.btn {
+		@include btn($lightest, #123456, 0.9rem);
+		font-family: "Open Sans", sans-serif;
+		margin: 0.75em 0 0.5em;
+		display: inline-block;
+	}
+
+	.btn-cancel {
+		background: $red;
+	}
+
+	.btn-done {
+		background: $green;
+	}
+
+	.btn-join {
+		background: $blue;
+	}
+
+	.btn[disabled="disabled"] {
+		filter: brightness(0.5);
+	}
+}

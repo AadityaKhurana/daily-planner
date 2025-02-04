@@ -1,0 +1,33 @@
+@import "_utilities";
+
+body {
+	font-family: "Open Sans", sans-serif;
+	display: grid;
+	place-items: center;
+}
+
+.row {
+	height: 2.75rem;
+	width: 20rem;
+	display: flex;
+	& + .row {
+		margin-top: 2.7em;
+	}
+}
+
+input {
+	width: 1.75rem;
+	height: 100%;
+	margin-right: 2em;
+}
+
+.text {
+	color: $darkest;
+	font-size: 1.25rem;
+	background: $lightest;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	padding-inline: 0.85em;
+	border-radius: 5px;
+}
